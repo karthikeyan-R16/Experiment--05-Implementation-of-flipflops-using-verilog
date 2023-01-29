@@ -112,89 +112,54 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: Karthikeyan R
 RegisterNumber:  22009322
 */
-PROGRAM FOR SR FLIPFLOP:
 
-module FlipFlopSR(S,R,clock,Q,Qbar);
-input S,R,clock;
-output Q,Qbar;
-wire X,Y;
-nand(X,S,clock);
-nand(Y,R,clock);
-nand(Q,X,Qbar);
-nand(Qbar,Y,Q);
-endmodule
+## SR flipflop:
 
-PROGRAM FOR JK FLIPFLOP:
+Program for flipflops and verify its truth table in quartus using Verilog programming.
 
-module FlipFlopJK(J,K,clock,Q,Qbar);
-input J,K,clock;
-output Q,Qbar;
-wire P,S;
-nand(P,J,clock,Qbar);
-nand(S,K,clock,Q);
-nand(Q,P,Qbar);
-nand(Qbar,S,Q);
-endmodule
+## PROGRAM
+module de05(S,R,CLK,Q,QBAR); input S,R,CLK; output Q,QBAR; wire X,Y; nand(X,S,CLK); nand(Y,R,CLK); nand(Q,X,QBAR); nand(QBAR,Y,Q); endmodule
+## RTL
+![output](./214629586-9e989406-7b80-499d-9928-0a3a7add5fb2.png)
+## Timing diagram
+![output](./214629883-ae5cb542-6f53-4bf1-9333-7914e67b7b28.png)
 
-PROGRAM FOR T FLIPFLOP:
+# JK Flipflop:
 
-module FlipFlopT(T,clock,Q,Qbar);
-input T,clock;
-output Q,Qbar;
-wire A,B;
-nand(A,T,clock,Qbar);
-nand(B,T,clock,Q);
-nand(Q,A,Qbar);
-nand(Qbar,B,Q);
-endmodule
+Program for flipflops and verify its truth table in quartus using Verilog programming.
 
-PROGRAM FOR D FLIPFLOP:
+# PROGRAM:
 
-module FlipFlopD(D,clock,Q,Qbar);
-input D,clock;
-output Q,Qbar;
-assign Dbar=~D;
-wire X,Y;
-nand(X,D,clock);
-nand(Y,Dbar,clock);
-nand(Q,X,Qbar);
-nand(Qbar,Y,Q);
-endmodule
+module de051(J,K,CLK,Q,QBAR); input J,K,CLK; output Q,QBAR; wire P,S; nand(P,J,CLK,QBAR); nand(S,K,CLK,Q); nand(Q,P,QBAR); nand(QBAR,S,Q); endmodule
+# RTL
+![output](./214630430-0a61e83a-c9f2-4089-b3dd-fc50de23a03c.png)
+# Timing diagram
+![output](./214630569-1002c6de-6d64-4bf6-a7c3-0f6a5c32c249.png)
 
+# D Flipflop:
 
+Program for flipflops and verify its truth table in quartus using Verilog programming.
 
+# PROGRAM:
 
+module de052(D,CLK,Q,QBAR); input D,CLK; output Q,QBAR; assign DBAR=~D; wire X,Y; nand(X,D,CLK); nand(Y,DBAR,CLK); nand(Q,X,QBAR); nand(QBAR,Y,Q); endmodule
+# RTL
+![output](./214630929-90a20666-7b09-47a6-b900-1d8b9289fbdc.png)
+# Timing diagram
+![output](./214631469-f486bce8-5950-4383-8824-3f19853180b3.png)
 
-### RTL LOGIC FOR FLIPFLOPS 
-SR FLIPFLOP
-![output](./srflipflop%20(2).png)
-JK FLIPFLOP
-![output](./jkflipflop.png)
-D FLIPFLOP
-![output](./dflipflop.png)
-T FLIPFLOP
-![output](./tflipflop.png)
+# T Flipflop:
 
+Program for flipflops and verify its truth table in quartus using Verilog programming.
 
+# PROGRAM:
 
+module de54(T,CLK,Q,QBAR); input T,CLK; output Q,QBAR; wire S,R; nand(S,T,CLK,QBAR); nand(R,T,CLK,Q); nand(Q,S,QBAR); nand(QBAR,R,Q); endmodule
 
-
-
-
-
-### TIMING DIGRAMS FOR FLIP FLOPS 
-SR FLIPFLOP
-![output](./srtiming.png)
-JK FLIPFLOP
-![output](./jktiming.png)
-D FLIPFLOP
-![output](./dtiming.png)
-T FLIPFLOP
-![output](./tftiming.png)
-
-
-
-
+# RTL
+![output](./214631807-e2b47909-94b3-4891-a593-7308d1f143a7.png)
+# Timing diagram
+![output](./214631991-b954a902-f275-4b43-ab62-15f70abfa6c8.png)
 
 
 
